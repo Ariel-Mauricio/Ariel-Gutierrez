@@ -1,418 +1,617 @@
-<!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="Description" content="Template portafolio desarrollador UI/UX " />
-    <title>Portafolio</title>
-    <link rel="stylesheet" href="style.css" />
-
-    <link rel="stylesheet" href="https://unpkg.com/primeflex@^3/primeflex.css">
-    <link rel="stylesheet" href="https://unpkg.com/primeflex/themes/saga-blue.css">
-    <script src="https://kit.fontawesome.com/b3f17f1dac.js" crossorigin="anonymous"></script>
-</head>
-
-<body>
-    <!-- HEADER -->
-    <header class="flex w-full fixed top-0 z-1">
-        <nav class="flex justify-content-between w-full navbar">
-            <span class="logo cursor-pointer" onclick="scrollToSection('home')">
-                <img src="./assets/Logo.png" alt="Logo portafolio" width="50" height="50">
-            </span>
-            <input type="checkbox" aria-label="Checkbox para mostrar y quitar hamburger menu"
-                class="checkbox xl:hidden">
-            <div class="hamburger__lines">
-                <span class="line line1"></span>
-                <span class="line line2"></span>
-                <span class="line line3"></span>
-            </div>
-            <div class="header__info flex align-items-center gap-3">
-                <ul class="flex flex-column xl:flex-row list-none">
-                    <li onclick="scrollToSection('about')">Sobre mí</li>
-                    <li onclick="scrollToSection('services')">Servicios</li>
-                    <li onclick="scrollToSection('portfolio')">Portafolio</li>
-                    <li onclick="scrollToSection('contact')">Contacto</li>
-                </ul>
-                <div class="hireMe__button pt-4">
-                    <a href="mailto:ariel241103@hotmail.com" aria-label="Enviar mensaje al correo"
-                        class="cursor-pointer no-underline border-round-lg text-xl xl:text-sm">Contratame</a>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <!--HOME PAGE -->
-    <div class="container">
-        <section id="home"
-            class="home__page flex align-items-center justify-content-center xl\:justify-content-between grid grid-nogutter gap-4">
-            <div class="left__content col-12 xl:col-6">
-                <div class="message__bubble triangle mb-4 md:mb-2">
-                    <div class="message__text p-2 sm:p-3 text-center">
-                        <p>Hola, Yo soy</p>
-                    </div>
-                </div>
-                <h1 class="text-3xl sm:text-5xl md:text-7xl">Ariel Maurico</h1>
-                <p class="text-gray-500">
-                    Habilidades  en Desarrollo web , HTML5,CSS,JS,Php.
-                </p> .
-                </p> Manejo en bases de datos 
-                </p> .
-                </p>Conocimientos basicos en java,node,Vue
-                </p>.
-                </p> Conocimientos en frameworks como laravel,Bostrap
-                </p>
-                <div class="home__buttons flex align-items-center gap-2 mt-6">
-                    <a href="./assets/CV Ariel Gutierrez.pdf" aria-label="Descargar curriculum"
-                        class="cursor-pointer border-round-lg no-underline" download>Descargar CV</a>
-                    <button onclick="scrollToSection('portfolio')" aria-label="Deslizar a sección portafolio para mostrar mis trabajos"
-                        class="cursor-pointer border-round-lg">Mi trabajo</button>
-                </div>
-            </div>
-            <div class="right__content col-9 sm:col-6 xl:col-5">
-                <img src="./assets/foto-perfil.jpg" alt="Foto perfil" width="100" height="100">
-            </div>
-        </section>
-        <!--ABOUT ME-->
-        <section id="about" class="about__me w-full min-h-screen flex align-items-center">
-            <div class="aboutMe__content min-h-full flex flex-column md:flex-row pt-8 md:pt-0">
-                <div class="aboutMe__info col-12 md:col-6 md:pr-6 pt-0">
-                    <h1 class="text-3xl md:text-5xl">Sobre mí</h1>
-                    <p class="text-gray-500">Soy disciplinado con enfoque en la excelencia. Comprometido a entregar proyectos de alta calidad, siempre esforzándome por superar las expectativas. Mi enfoque meticuloso garantiza resultados excepcionales en cada tarea.</p>
-                    <div class="knowledge flex flex-column gap-3 mt-5">
-                        <p>HTML , CSS , JS </p>
-                        <div class="progress__bar progress__HTML">
-                            <span></span>
-                        </div>
-                        <p>Python </p>
-                        <div class="progress__bar progress__Python">
-                            <span></span>
-                        </div>
-                        <p>Bases de datos y Machinelearnig </p>
-                        <div class="progress__bar progress__BDD">
-                            <span></span>
-                        </div>
-                        <p>Mantenimiento pc </p>
-                        <div class="progress__bar progress__MantenimientoPC">
-                            <span></span>
-                        </div>
-                        <p>JavaScript </p>
-                        <div class="progress__bar progress__JavaScript">
-                            <span></span>
-                        </div>
-                        <p>PHP </p>
-                        <div class="progress__bar progress__React">
-                            <span></span>
-                        </div>
-                        <p>JAVA </p>
-                        <div class="progress__bar progress__NodeJS">
-                            <span></span>
-                        </div>
-                    </div>
-                    <div class="technologies flex flex-wrap gap-3 mt-5">
-                        <i class="fab fa-html5" title="HTML5"></i>
-                        <i class="fab fa-css3-alt" title="CSS3"></i>
-                        <i class="fab fa-js" title="JavaScript"></i>
-                        <i class="fab fa-react" title="React"></i>
-                        <i class="fab fa-node-js" title="Node.js"></i>
-                        <i class="fab fa-python" title="Python"></i>
-                        <i class="fas fa-database" title="Databases"></i>
-                    </div>
-                    <div class="hireMe__button pt-4">
-                        <a href="mailto:ariel241103@hotmail.com" aria-label="Enviar mensaje al correo"
-                            class="cursor-pointer no-underline border-round-lg">Contratame</a>
-                    </div>
-
-                </div>
-                <div class="experience__education col-12 md:col-6 md:pl-6 pt-6 md:pt-0">
-                    <h1 class="text-3xl md:text-5xl">Experiencia</h1>
-                    <ul class="experience__list mt-4">
-                        <li>
-                            <h3>Desarrollador Web Freelance</h3>
-                            <p class="text-gray-500">Presente</p>
-                            <p>Desarrollo de sitios web personalizados para clientes utilizando HTML, CSS, JavaScript y frameworks modernos.</p>
-                        </li>
-                        <li>
-                            <h3>Ayudante de Desarrollo Web </h3>
-                            <p class="text-gray-500">Marzo 2024 - Diciembre 2024</p>
-                            <p>Proporcioné soporte técnico y mantenimiento de computadoras para una variedad de clientes.</p>
-                        </li>
-                    </ul>
-                    <h1 class="text-3xl md:text-5xl mt-8">Educación</h1>
-                    <ul class="education__list mt-4">
-                        <li>
-                            <h3>Carrera en Sistemas y Gestion de Data</h3>
-                            <p class="text-gray-500">Instituto Tecnologico Universitario Rumiñawi, 2020 - 2024</p>
-                            <p>Estudios enfocados en desarrollo de software, bases de datos y tecnologías web.</p>
-                        </li>
-                        <li>
-                            <h3>Curso de Desarrollo Web</h3>
-                            <p class="text-gray-500">Cuso Cisco desarrolo web y python, 2020</p>
-                            <p>Curso intensivo de desarrollo web cubriendo HTML, CSS, JavaScript y frameworks populares.</p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="image col p-0 mt-6 md:mt-0">
-                    <img src="./assets/freelancer.jpg" alt="Foto relacionado a acerca de mí" width="100" height="100">
-                </div>
-            </div>
-        </section>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="Portfolio of Ariel Gutierrez - Web Developer, Database, AI, Problem Solver" name="Description"/>
+  <title>
+   Ariel Gutierrez Portfolio
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  
+ </head>
+ <body class="scroll-smooth">
+  <!-- HEADER -->
+  <header>
+   <nav class="flex items-center justify-between h-16">
+    <div class="flex items-center gap-3">
+     <img alt="Logo portfolio, stylized letter A and G interlaced in blue and black" class="cursor-pointer" height="50" onclick="scrollToSection('home')" src="https://storage.googleapis.com/a1aa/image/13bc727e-67f8-49a3-f2b1-e2a1dc890874.jpg" width="50"/>
+     <span class="text-xl font-bold text-white cursor-pointer select-none" onclick="scrollToSection('home')">
+      Ariel Gutierrez
+     </span>
     </div>
-    <!--FREE LANCER SECTION -->
-    <section class="freelancer mb-4 mt-4 min-w-full flex flex-column justify-content-center align-items-center">
-        <p class="text-sm">Tienes un proyecto en mente?</p>
-        <h1 class="text-center">Estoy disponible como freelancer</h1>
-        <div class="hireMe__button pt-4">
-            <a href="mailto:ariel241103@hotmail.com" aria-label="Enviar mensaje al correo"
-                class="cursor-pointer no-underline border-round-lg">Escríbeme</a>
-        
-    </section>
-    <!--SERVICES -->
-    <div class="container">
-        <section id="services" class="services min-h-full w-full pb-7">
-            <div class="services__title flex flex-column gap-3 text-center">
-                <h1 class="text-3xl md:text-5xl">Mis servicios</h1>
-                <p class="text-gray-400 text-sm md:text-base">
-                    Ofrezco servicios especializados en desarrollo web y de software utilizando tecnologías como HTML, Python, Java y SQL. Además, tengo experiencia en el mantenimiento y reparación de computadoras para garantizar un rendimiento óptimo. Mi enfoque se centra en soluciones digitales innovadoras y un servicio de calidad en el diseño y optimización de bases de datos.
-                </p>
-            </div>
-            <div class="services__card w-full grid grid-nogutter mt-7 gap-5">
-                <div class="card flex align-items-center col-12 sm:col-6 lg:col-4 gap-3 p-2">
-                    <div class="service__logo flex align-items-center justify-content-center">
-                        <i class="fab fa-php"></i>
-                    </div>
-                    <div class="service__name">
-                        <p>php</p>
-                    </div>
-                </div>
-                <div class="card flex align-items-center col-12 sm:col lg:col-4 gap-3 p-2">
-                    <div class="service__logo flex align-items-center justify-content-center ">
-                        <i class="fab fa-python"></i>
-                    </div>
-                    <div class="service__name">
-                        <p>Python</p>
-                    </div>
-                </div>
-                <div class="card flex align-items-center col-12 sm:col-6 md:col-3 lg:col gap-3 p-2">
-                    <div class="service__logo flex align-items-center justify-content-center ">
-                        <i class="fab fa-java"></i>
-                    </div>
-                    <div class="service__name">
-                        <p>Java</p>
-                    </div>
-                </div>
-                <div class="card flex align-items-center col-12 sm:col md:col lg:col-4 gap-3 p-2">
-                    <div class="service__logo flex align-items-center justify-content-center ">
-                        <i class="fab fa-laravel"></i>
-                    </div>
-                    <div class="service__name">
-                        <p>Laravel</p>
-                    </div>
-                </div>
-                <div class="card flex align-items-center col-12 sm:col-6 md:col-4 lg:col-4 gap-3 p-2">
-                    <div class="service__logo flex align-items-center justify-content-center ">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <div class="service__name">
-                        <p>Mysql</p>
-                    </div>
-                </div>
-                
-                <div class="card flex align-items-center col-12 sm:col md:col-4 lg:col gap-3 p-2">
-                    <div class="service__logo flex align-items-center justify-content-center ">
-                        <i class="fa-solid fa-code"></i>
-                    </div>
-                    <div class="service__name">
-                        <p>Desarrollo web</p>
-                    </div>
-                </div>
-            </div>
-            
-            
-            
-        </section>
-
-        <!--PORTFOLIO -->
-        <section id="portfolio" class="portfolio min-h-full w-full pb-8 pt-8">
-            <div class="portfolio__title flex flex-column gap-3 text-center">
-                <h1 class="text-3xl md:text-5xl">Mi trabajo</h1>
-                <p class="text-gray-400 text-sm md:text-base">
-                    "Como principiante en el campo del desarrollo web, estoy emocionado de compartir los proyectos en los que he estado trabajando. He estado explorando tecnologías como HTML, Python, Java y SQL para crear sitios web simples pero efectivos. Mis proyectos se centran en aprender y aplicar conceptos básicos de diseño web y desarrollo de aplicaciones, mientras sigo desarrollando mis habilidades para ofrecer soluciones cada vez más sofisticadas en el futuro."
-                </p>
-            </div>
-            <div class="portfolio__gallery">
-                <div class="gallery__categories mb-5 mt-5">
-                    <ul class="flex list-none flex-wrap justify-content-center gap-3">
-                        <li class="filter-item active" data-filter="all">Todos</li>
-                        <li class="filter-item " data-filter="gym">Curriculum</li>
-                        <li class="filter-item " data-filter="tours__Web">Sitios web</li>
-                        <li class="filter-item " data-filter="world__Tours">Presentacion</li>
-                        <li class="filter-item " data-filter="e__commerce">Empresarial/li>
-                    </ul>
-                </div>
-                <div class="proyect__gallery flex justify-content-center align-items-center flex-wrap gap-3">
-                    <div class="project__card tours__Web">
-                        <img src="./assets/proyecto-1.png" alt="">
-                        <div class="overlay"></div>
-                        <div
-                            class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
-                            <h2>Paginas informativas</h2>
-                            <p>Realize una paguina infromativa para una mecanica 
-                            </p>
-                            <span><i class="fa-solid fa-arrow-right-long"></i></span>
-                        </div>
-                    </div>
-                    
-                    
-                    <div class="project__card e__commerce">
-                        <img src="./assets/proyecto-2.png" alt="">
-                        <div class="overlay"></div>
-                        <div
-                            class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
-                            <h2>Mi Microempresa</h2>
-                            <p>Realize una paguina para mi micro empresa
-                            </p>
-                            <span><i class="fa-solid fa-arrow-right-long"></i></span>
-                        </div>
-                    </div>
-                    <div class="project__card tours__Web">
-                        <img src="./assets/proyecto-3.png" alt="">
-                        <div class="overlay"></div>
-                        <div
-                            class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
-                            <h2>Paguina Turistica Ecuador con API CHATBOT IA</h2>
-                            <p>Fue relizada para una empresa turistica que queria dar informacion a sus clientes e integrar inteligencia artificial
-                            </p>
-                            <span><i class="fa-solid fa-arrow-right-long"></i></span>
-                        </div>
-                    </div>
-                    <div class="project__card gym">
-                        <img src="./assets/proyecto-4.png" alt="">
-                        <div class="overlay"></div>
-                        <div
-                            class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
-                            <h2>Sistema de hospital en linea</h2>
-                            <p>Este fue un proyecto relizado para una clinica pequeña
-                            </p>
-                            <span><i class="fa-solid fa-arrow-right-long"></i></span>
-                        </div>
-                    </div>
-                    <div class="project__card world__Tours">
-                        <img src="./assets/proyecto-5.png" alt="">
-                        <div class="overlay"></div>
-                        <div
-                            class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
-                            <h2>Sistema Escolar</h2>
-                            <p>Esta paguina la realize para una pequeña istitucion educativa
-                            </p>
-                            <span><i class="fa-solid fa-arrow-right-long"></i></span>
-                        </div>
-                    </div>
-                    <div class="project__card tours__Web">
-                        <img src="./assets/proyecto-6.png" alt="">
-                        <div class="overlay"></div>
-                        <div
-                            class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
-                            <h2>Sistema gestion de cursos</h2>
-                            <p>Esta paguina la realize para un profesor queria gestionar cursos y estudiantes
-                            </p>
-                            <span><i class="fa-solid fa-arrow-right-long"></i></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--FOOTER -->
-        <footer id="contact" class="min-h-full w-full flex grid col-12 justify-content-center pb-8 pt-8 lg:text-center">
-            <div class="social__media col-12 md:col-4 flex flex-column justify-content-between">
-                <h3>Redes sociales</h3>
-                <p>Auténtico e innovador</p>
-                <p>Desarrollo lo que necesitas, con un enfoque en usabilidad y rendimiento</p>
-                <div class="social__mediaIcons mt-5 flex lg:justify-content-center gap-3">
-                    <a href="https://wa.me/qr/HHJUQNSCRLSVN1" target="_blank" aria-label="Ir a WhatsApp">
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </a>
-                    <a href="https://www.instagram.com/websculturs/" target="_blank" aria-label="Ir a Instagram">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                    <a href="https://github.com/ArielMaurico" target="_blank" aria-label="Ir a GitHub">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                </div>
-                
-            </div>
-            <div class="contact col-12 sm:col-6 sm:pt-0 md:pt-2 md:col-4 flex flex-column justify-content-between md:align-items-center">
-                <h3>Contacto</h3>
-                <div class="phone__number flex align-items-center gap-2">
-                    <i class="fa-solid fa-phone"></i>
-                    <p>+593 0984229704</p>
-                </div>
-                <div class="email flex align-items-center gap-2">
-                    <i class="fa-solid fa-envelope"></i>
-                    <p>ariel241103@hotmail.com</p>
-                </div>
-                <a href="mailto:ariel241103@hotmail.com"
-                    class="cursor-pointer text-center col-4 sm:col-6 xl:col-4 mt-3 no-underline border-round-lg">
-                    <span>
-                        <i class="fa-solid fa-message"></i>
-                    </span>Escríbeme*
-                </a>
-            </div>
-            <div class="my__services col-12 sm:col-6 sm:p-0 md:col-4 md:pt-2 md:align-items-center flex flex-column justify-content-between">
-                <h3>Mis Servicios</h3>
-                <p>Desarrollo web</p>
-                <p>Pyhon</p>
-                <p>Bases de datos</p>
-                <P>Mantenimiento PC</P>
-            </div>
-        </footer>
+    <input aria-label="Toggle menu" class="peer hidden" id="menu-toggle" type="checkbox"/>
+    <label class="lg:hidden cursor-pointer block text-3xl text-cyan-400" for="menu-toggle" id="hamburger-label">
+     <i class="fas fa-bars">
+     </i>
+    </label>
+    <ul class="hidden lg:flex lg:items-center lg:gap-6 text-white font-semibold" id="menu">
+     <li>
+      <a class="nav-link" onclick="scrollToSection('about')">
+       Sobre mí
+      </a>
+     </li>
+     <li>
+      <a class="nav-link" onclick="scrollToSection('services')">
+       Servicios
+      </a>
+     </li>
+     <li>
+      <a class="nav-link" onclick="scrollToSection('portfolio')">
+       Portafolio
+      </a>
+     </li>
+     <li>
+      <a class="nav-link" onclick="scrollToSection('contact')">
+       Contacto
+      </a>
+     </li>
+     <li>
+      <a aria-label="Enviar mensaje al correo" class="btn-primary ml-4 whitespace-nowrap" href="mailto:ariel241103@hotmail.com">
+       Contrátame
+      </a>
+     </li>
+    </ul>
+    <ul class="peer-checked:block lg:hidden absolute top-16 right-0 bg-cyan-400 bg-opacity-90 w-48 rounded-md shadow-lg text-black font-semibold flex flex-col p-4 gap-3 z-40" id="menu-mobile">
+     <li>
+      <a class="nav-link" onclick="scrollToSection('about'); closeMenu();">
+       Sobre mí
+      </a>
+     </li>
+     <li>
+      <a class="nav-link" onclick="scrollToSection('services'); closeMenu();">
+       Servicios
+      </a>
+     </li>
+     <li>
+      <a class="nav-link" onclick="scrollToSection('portfolio'); closeMenu();">
+       Portafolio
+      </a>
+     </li>
+     <li>
+      <a class="nav-link" onclick="scrollToSection('contact'); closeMenu();">
+       Contacto
+      </a>
+     </li>
+     <li>
+      <a aria-label="Enviar mensaje al correo" class="btn-primary block text-center" href="mailto:ariel241103@hotmail.com" onclick="closeMenu();">
+       Contrátame
+      </a>
+     </li>
+    </ul>
+   </nav>
+  </header>
+  <main class="container mt-20">
+   <!-- HOME -->
+   <section class="flex flex-col lg:flex-row items-center gap-10 min-h-[80vh]" id="home">
+    <div class="home-left flex-1">
+     <div class="message-bubble max-w-max">
+      Hola, Yo soy
+     </div>
+     <h1 class="text-5xl md:text-7xl font-extrabold mb-4">
+      Ariel Maurico
+     </h1>
+     <p class="text-gray-400 mb-1">
+      Habilidades en Desarrollo web, HTML5, CSS, JS, PHP.
+     </p>
+     <p class="text-gray-400 mb-1">
+      Manejo en bases de datos.
+     </p>
+     <p class="text-gray-400 mb-1">
+      Conocimientos básicos en Java, Node, Vue.
+     </p>
+     <p class="text-gray-400 mb-6">
+      Conocimientos en frameworks como Laravel, Bootstrap.
+     </p>
+     <div class="flex flex-wrap gap-4">
+      <a aria-label="Descargar curriculum" class="btn-primary whitespace-nowrap" download="" href="./assets/Ariel Gutierrez CV.pdf">
+       Descargar CV
+      </a>
+      <button aria-label="Deslizar a sección portafolio para mostrar mis trabajos" class="btn-outline whitespace-nowrap" onclick="scrollToSection('portfolio')">
+       Mi trabajo
+      </button>
+     </div>
     </div>
+    <div class="home-right flex-1 max-w-sm w-full">
+     <img alt="Foto perfil de Ariel Gutierrez, joven desarrollador web con fondo oscuro y expresión amigable" class="rounded-xl w-full h-auto object-cover shadow-lg" height="400" src="assets/real.jpg" width="400"/>
+    </div>
+   </section>
+   <!-- ABOUT ME -->
+   <section class="flex flex-col md:flex-row gap-10 items-center min-h-[80vh]" id="about">
+    <div class="flex-1 space-y-6">
+     <h2 class="text-4xl font-bold text-cyan-400">
+      Sobre mí
+     </h2>
+     <p class="text-gray-400 leading-relaxed">
+      Soy disciplinado con enfoque en la excelencia. Comprometido a entregar proyectos de alta calidad, siempre esforzándome por superar las expectativas. Mi enfoque meticuloso garantiza resultados excepcionales en cada tarea.
+     </p>
+     <div>
+      <p class="font-semibold mb-1">
+       HTML, CSS, JS
+      </p>
+      <div class="progress-bar">
+       <div class="progress-fill progress-html">
+       </div>
+      </div>
+      <p class="font-semibold mb-1">
+       Python
+      </p>
+      <div class="progress-bar">
+       <div class="progress-fill progress-python">
+       </div>
+      </div>
+      <p class="font-semibold mb-1">
+       Bases de datos y Machine Learning
+      </p>
+      <div class="progress-bar">
+       <div class="progress-fill progress-bdd">
+       </div>
+      </div>
+      <p class="font-semibold mb-1">
+       Mantenimiento PC
+      </p>
+      <div class="progress-bar">
+       <div class="progress-fill progress-mantenimiento">
+       </div>
+      </div>
+      <p class="font-semibold mb-1">
+       JavaScript
+      </p>
+      <div class="progress-bar">
+       <div class="progress-fill progress-js">
+       </div>
+      </div>
+      <p class="font-semibold mb-1">
+       PHP
+      </p>
+      <div class="progress-bar">
+       <div class="progress-fill progress-php">
+       </div>
+      </div>
+      <p class="font-semibold mb-1">
+       JAVA
+      </p>
+      <div class="progress-bar">
+       <div class="progress-fill progress-java">
+       </div>
+      </div>
+      <p class="font-semibold mb-1">
+       NodeJS
+      </p>
+      <div class="progress-bar">
+       <div class="progress-fill progress-nodejs">
+       </div>
+      </div>
+     </div>
+     <div class="flex flex-wrap gap-4 text-3xl text-cyan-400">
+      <i aria-label="HTML5 icon" class="fab fa-html5" title="HTML5">
+      </i>
+      <i aria-label="CSS3 icon" class="fab fa-css3-alt" title="CSS3">
+      </i>
+      <i aria-label="JavaScript icon" class="fab fa-js" title="JavaScript">
+      </i>
+      <i aria-label="React icon" class="fab fa-react" title="React">
+      </i>
+      <i aria-label="Node.js icon" class="fab fa-node-js" title="Node.js">
+      </i>
+      <i aria-label="Python icon" class="fab fa-python" title="Python">
+      </i>
+      <i aria-label="Databases icon" class="fas fa-database" title="Databases">
+      </i>
+     </div>
+     <a aria-label="Enviar mensaje al correo" class="btn-primary inline-block mt-6" href="mailto:ariel241103@hotmail.com">
+      Contrátame
+     </a>
+    </div>
+    <div class="flex-1 space-y-10">
+     <div>
+      <h2 class="text-4xl font-bold text-cyan-400 mb-4">
+       Experiencia
+      </h2>
+      <ul class="exp-edu-list">
+       <li>
+        <h3>
+         Desarrollador Web Freelance
+        </h3>
+        <p class="date">
+         Presente
+        </p>
+        <p>
+         Desarrollo de sitios web personalizados para clientes utilizando HTML, CSS, JavaScript y frameworks modernos.
+        </p>
+       </li>
+       <li>
+        <h3>
+         Jefe de sistemas - Polimil Escuela de Capacitación Integral
+        </h3>
+        <p class="date">
+         2025
+        </p>
+        <p>
+         Encargado de sistemas, automatizando procesos y manejando bases de datos para estimar rendimiento de la empresa.
+        </p>
+       </li>
+      </ul>
+     </div>
+     <div>
+      <h2 class="text-4xl font-bold text-cyan-400 mb-4">
+       Educación
+      </h2>
+      <ul class="exp-edu-list">
+       <li>
+        <h3>
+         Carrera en Sistemas y Gestión de Data
+        </h3>
+        <p class="date">
+         Instituto Tecnológico Universitario Rumiñawi, 2020 - 2024
+        </p>
+        <p>
+         Estudios enfocados en desarrollo de software, bases de datos y tecnologías web.
+        </p>
+       </li>
+       <li>
+        <h3>
+         Certificacion  Cisco  Python y otro de  Ciberseguridad
+        </h3>
+        <p class="date">
+         Curso Cisco  Python , Ciberseguridad, 2024-20
+        </p>
+        <p>
+         Curso intensivo de Python  y ciberseguridad    infomatica.
+        </p>
+       
+      
+   </section>
+   
+   <!-- FREELANCER SECTION -->
+   <section class="freelancer-section">
+    <p class="text-sm mb-2">
+     ¿Tienes un proyecto en mente?
+    </p>
+    <h2>
+     Estoy disponible como freelancer
+    </h2>
+    <a aria-label="Enviar mensaje al correo" class="freelancer-button mt-6 inline-block" href="mailto:ariel241103@hotmail.com">
+     Escríbeme
+    </a>
+   </section>
+   <!-- SERVICES -->
+   <section class="space-y-8" id="services">
+    <div class="text-center max-w-3xl mx-auto">
+     <h2 class="text-4xl font-bold text-cyan-400 mb-4">
+      Mis servicios
+     </h2>
+     <p class="text-gray-400 text-base">
+      Ofrezco servicios especializados en desarrollo web y de software utilizando tecnologías como HTML, Python, Java y SQL. Además, tengo experiencia en el mantenimiento y reparación de computadoras para garantizar un rendimiento óptimo. Mi enfoque se centra en soluciones digitales innovadoras y un servicio de calidad en el diseño y optimización de bases de datos.
+     </p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+     <div class="service-card">
+      <div class="service-icon text-blue-600">
+       <i aria-hidden="true" class="fab fa-php">
+       </i>
+      </div>
+      <p class="capitalize font-semibold">
+       PHP
+      </p>
+     </div>
+     <div class="service-card">
+      <div class="service-icon text-yellow-400">
+       <i aria-hidden="true" class="fab fa-python">
+       </i>
+      </div>
+      <p class="capitalize font-semibold">
+       Python
+      </p>
+     </div>
+     <div class="service-card">
+      <div class="service-icon text-red-600">
+       <i aria-hidden="true" class="fab fa-java">
+       </i>
+      </div>
+      <p class="capitalize font-semibold">
+       Java
+      </p>
+     </div>
+     <div class="service-card">
+      <div class="service-icon text-red-500">
+       <i aria-hidden="true" class="fab fa-laravel">
+       </i>
+      </div>
+      <p class="capitalize font-semibold">
+       Laravel
+      </p>
+     </div>
+     <div class="service-card">
+      <div class="service-icon text-green-500">
+       <i aria-hidden="true" class="fas fa-database">
+       </i>
+      </div>
+      <p class="capitalize font-semibold">
+       MySQL
+      </p>
+     </div>
+     <div class="service-card">
+      <div class="service-icon text-cyan-400">
+       <i aria-hidden="true" class="fas fa-code">
+       </i>
+      </div>
+      <p class="capitalize font-semibold">
+       Desarrollo web
+      </p>
+     </div>
+    </div>
+   </section>
+   <!-- PORTFOLIO -->
+   <section class="space-y-8 mt-16" id="portfolio">
+    <div class="text-center max-w-3xl mx-auto">
+     <h2 class="text-4xl font-bold text-cyan-400 mb-4">Mis Proyectos</h2>
+     <p class="text-gray-400 text-base">Estos son algunos de los proyectos que he realizado en diferentes áreas y tecnologías.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto mt-6">
+      <div class="project-card">
+        <img src="assets/proyecto-1.png" alt="Proyecto 1" class="project-image rounded-xl w-full h-auto object-cover shadow-lg" />
+        <div class="project-info"><h3 class="project-title">Sistema de Facturacion</h3></div>
+      </div>
+      <div class="project-card">
+        <img src="assets/proyecto-2.png" alt="Proyecto 2" class="project-image rounded-xl w-full h-auto object-cover shadow-lg" />
+        <div class="project-info"><h3 class="project-title">Dashboard Powerbi</h3></div>
+      </div>
+      <div class="project-card">
+        <img src="assets/proyecto-3.png" alt="Proyecto 3" class="project-image rounded-xl w-full h-auto object-cover shadow-lg" />
+        <div class="project-info"><h3 class="project-title">Web turística con IA</h3></div>
+      </div>
+      <div class="project-card">
+        <img src="assets/proyecto-4.png" alt="Proyecto 4" class="project-image rounded-xl w-full h-auto object-cover shadow-lg" />
+        <div class="project-info"><h3 class="project-title">Sistema hospitalario</h3></div>
+      </div>
+      <div class="project-card">
+        <img src="assets/proyecto-5.png" alt="Proyecto 5" class="project-image rounded-xl w-full h-auto object-cover shadow-lg" />
+        <div class="project-info"><h3 class="project-title">Sistema de laboratorio</h3></div>
+      </div>
+      <div class="project-card">
+        <img src="assets/proyecto-6.png" alt="Proyecto 6" class="project-image rounded-xl w-full h-auto object-cover shadow-lg" />
+        <div class="project-info"><h3 class="project-title">Sistema de cursos</h3></div>
+      </div>
+    </div>
+   </section>
+  </main>
+  <!-- FOOTER -->
+  <footer aria-label="Contacto y redes sociales" id="contact">
+   <div>
+    <h3>
+     Redes sociales
+    </h3>
+    <p>
+     Auténtico e innovador
+    </p>
+    <p>
+     Desarrollo lo que necesitas, con un enfoque en usabilidad y rendimiento
+    </p>
+    <div class="social-icons mt-4 flex gap-4">
+     <a aria-label="Ir a WhatsApp" href="https://wa.me/qr/HHJUQNSCRLSVN1" rel="noopener noreferrer" target="_blank">
+      <i class="fab fa-whatsapp">
+      </i>
+     </a>
+     <a aria-label="Ir a Instagram" href="https://www.instagram.com/websculturs/" rel="noopener noreferrer" target="_blank">
+      <i class="fab fa-instagram">
+      </i>
+     </a>
+     <a aria-label="Ir a GitHub" href="https://github.com/ArielMaurico" rel="noopener noreferrer" target="_blank">
+      <i class="fab fa-github">
+      </i>
+     </a>
+    </div>
+   </div>
+   <div>
+    <h3>
+     Contacto
+    </h3>
+    <div class="contact-info">
+     <div class="contact-item">
+      <i aria-hidden="true" class="fas fa-phone">
+      </i>
+      <span>
+       +593 0984229704
+      </span>
+     </div>
+     <div class="contact-item">
+      <i aria-hidden="true" class="fas fa-envelope">
+      </i>
+      <span>
+       ariel241103@hotmail.com
+      </span>
+     </div>
+     <a aria-label="Enviar mensaje al correo" class="contact-button" href="mailto:ariel241103@hotmail.com">
+      Escríbeme
+     </a>
+    </div>
+   </div>
+   <div>
+    <h3>
+     Mis Servicios
+    </h3>
+    <p>
+     Desarrollo web
+    </p>
+    <p>
+     Python
+    </p>
+    <p>
+     Bases de datos
+    </p>
+    <p>
+     Mantenimiento PC
+    </p>
+   </div>
+  </footer>
 
-</body>
-<script>
-    const filterContainer = document.querySelector(".gallery__categories");
-    const galleryItems = document.querySelectorAll(".project__card");
+  <!-- Modal for project details -->
+  <div aria-hidden="true" aria-modal="true" role="dialog" id="project-modal" class="modal-overlay" tabindex="-1">
+   <div class="modal-content" role="document">
+  <button aria-label="Cerrar ventana modal" class="modal-close" id="modal-close-btn" type="button">
+   <i class="fas fa-times"></i>
+  </button>
+  <img alt="" class="modal-image" id="modal-image" src=""/>
+  <h3 class="modal-title" id="modal-title"></h3>
+  <p class="modal-description" id="modal-description"></p>
+   </div>
+  </div>
 
-    filterContainer.addEventListener("click", (event) => {
-        if (event.target.classList.contains("filter-item")) {
-            filterContainer.querySelector(".active").classList.remove("active");
-            event.target.classList.add("active")
-            const filterValue = event.target.getAttribute("data-filter")
-            galleryItems.forEach(item => {
-                if (item.classList.contains(filterValue) || filterValue === "all") {
-                    item.classList.remove("hide")
-                    item.classList.add("show")
-                } else {
-                    item.classList.remove("show")
-                    item.classList.add("hide")
-                }
-            })
+  <script>
+   // Portfolio filter functionality
+    const filterButtons = document.querySelectorAll('.filter-item');
+    const projects = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Update active state
+        filterButtons.forEach(btn => {
+          btn.classList.remove('active');
+          btn.setAttribute('aria-pressed', 'false');
+        });
+        button.classList.add('active');
+        button.setAttribute('aria-pressed', 'true');
+
+        const filter = button.getAttribute('data-filter');
+
+        projects.forEach(project => {
+          if (filter === 'all' || project.classList.contains(filter)) {
+            project.style.display = 'flex';
+            project.classList.add('show');
+            project.classList.remove('hide');
+          } else {
+            project.style.display = 'none';
+            project.classList.remove('show');
+            project.classList.add('hide');
+          }
+        });
+      });
+    });
+
+    // Scroll to section function
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Close mobile menu function
+    function closeMenu() {
+      const menuToggle = document.getElementById('menu-toggle');
+      if (menuToggle) {
+        menuToggle.checked = false;
+      }
+    }
+
+    // Fix hamburger menu toggle on mobile: close menu when clicking outside or on links
+    document.addEventListener('click', (event) => {
+      const menuToggle = document.getElementById('menu-toggle');
+      const menuMobile = document.getElementById('menu-mobile');
+      const hamburgerLabel = document.getElementById('hamburger-label');
+      if (!menuMobile.contains(event.target) && !hamburgerLabel.contains(event.target)) {
+        if (menuToggle.checked) {
+          menuToggle.checked = false;
         }
-    })
-
-    function scrollToSection(sectionId){
-        document.getElementById(sectionId).scrollIntoView({behavior:"smooth"})
-    }
-
-    const testimonialCards = document.querySelector('.testimonial__cards');
-    const prevButton = document.getElementById('prev');
-    const nextButton = document.getElementById('next');
-    let currentIndex = 0;
-
-    function showTestimonial(index) {
-        const cardWidth = testimonialCards.querySelector('.testimonial__card').offsetWidth;
-        testimonialCards.style.transform = `translateX(${-index * cardWidth}px)`;
-    }
-
-    prevButton.addEventListener('click', () => {
-        currentIndex = (currentIndex > 0) ? currentIndex - 1 : testimonialCards.children.length - 1;
-        showTestimonial(currentIndex);
+      }
     });
 
-    nextButton.addEventListener('click', () => {
-        currentIndex = (currentIndex < testimonialCards.children.length - 1) ? currentIndex + 1 : 0;
-        showTestimonial(currentIndex);
-    });
-</script>
+    // Modal functionality for project details
+    const modal = document.getElementById('project-modal');
+    const modalImage = document.getElementById('modal-image');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDescription = document.getElementById('modal-description');
+    const modalLink = document.getElementById('modal-link');
+    const modalCloseBtn = document.getElementById('modal-close-btn');
 
+    // Data for projects (matching the projects in portfolio)
+    const projectData = [
+      {
+        title: "Sistema de Facturación",
+        description: "Desarrollado para Polimil Escuela de Capacitación Integral, este sistema automatiza la gestión de ingresos y egresos, genera facturas en PDF de forma autónoma y realiza cálculos empresariales avanzados. Incluye módulos de control de inventario, reportes estadísticos, integración con bases de datos SQL y seguridad de acceso por roles. Impacta directamente en la eficiencia administrativa y la reducción de errores humanos.",
+        image: "assets/proyecto-1.png",
+        alt: "Sistema de facturación Polimil, interfaz moderna y reportes automáticos."
+      },
+      {
+        title: "Dashboard PowerBI",
+        description: "Dashboard interactivo con PowerBI que analiza grandes volúmenes de datos sobre enfermedades en Latinoamérica. Permite segmentar por país y región, identificar tendencias epidemiológicas y visualizar los medicamentos más consumidos. Consume datos en tiempo real desde Google BigQuery y utiliza visualizaciones avanzadas para la toma de decisiones en salud pública.",
+        image: "assets/proyecto-2.png",
+        alt: "Dashboard PowerBI, visualización de datos epidemiológicos y análisis por país."
+      },
+      {
+        title: "Web turística con IA",
+        description: "Sitio web turístico para Ecuador con integración de inteligencia artificial. Los usuarios pueden consultar destinos, restaurantes y actividades, recibiendo respuestas automáticas gracias a un chatbot IA conectado a una API propia. Incluye mapas interactivos, recomendaciones personalizadas y panel de administración para la empresa turística.",
+        image: "assets/proyecto-3.png",
+        alt: "Web turística Ecuador, IA y mapas interactivos."
+      },
+      {
+        title: "Sistema hospitalario",
+        description: "Plataforma para clínicas y consultorios que gestiona citas, historial clínico, recetas electrónicas y comunicación con pacientes. Incorpora inteligencia artificial para responder preguntas médicas generales, alertas automáticas y módulo de telemedicina. Optimiza la atención médica y la administración de recursos clínicos.",
+        image: "assets/proyecto-4.png",
+        alt: "Sistema hospitalario, gestión clínica y telemedicina."
+      },
+      {
+        title: "Sistema de laboratorio",
+        description: "Solución integral para la gestión de laboratorios académicos y científicos. Permite administrar estudiantes, profesores, equipos y experimentos, con seguimiento de resultados y generación de informes automáticos. Mejora la trazabilidad y la organización de actividades en entornos educativos y de investigación.",
+        image: "assets/proyecto-5.png",
+        alt: "Sistema de laboratorio, gestión académica y científica."
+      },
+      {
+        title: "Sistema de cursos",
+        description: "Sistema avanzado para la gestión de profesores, estudiantes, materias y notas. Utiliza APIs en PHP y Java para sincronización bidireccional de datos, permitiendo administración eficiente y escalable. Incluye paneles de control, reportes automáticos y conexión segura con bases de datos relacionales.",
+        image: "assets/proyecto-6.png",
+        alt: "Sistema de cursos, integración PHP-Java y paneles de control."
+      }
+    ];
+
+    // Attach click and keyboard event listeners to project cards
+    projects.forEach((project, index) => {
+      project.addEventListener('click', () => openModal(index));
+      project.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openModal(index);
+        }
+      });
+    });
+
+    function openModal(index) {
+  const data = projectData[index];
+  modalImage.src = data.image;
+  modalImage.alt = data.alt;
+  modalTitle.textContent = data.title;
+  modalDescription.textContent = data.description;
+  modal.setAttribute('aria-hidden', 'false');
+  modal.classList.add('show');
+  modal.focus();
+  document.body.style.overflow = 'hidden'; // Prevent background scroll
+    }
+
+    function closeModal() {
+      modal.setAttribute('aria-hidden', 'true');
+      modal.classList.remove('show');
+      document.body.style.overflow = ''; // Restore scroll
+    }
+
+    modalCloseBtn.addEventListener('click', closeModal);
+
+    // Close modal on overlay click (outside modal content)
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('show')) {
+        closeModal();
+      }
+    });
+  </script>
+ </body>
 </html>
