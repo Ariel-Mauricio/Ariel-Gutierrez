@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio de proyectos de Ariel Gutierrez - Sistemas empresariales, aplicaciones web, dashboards y más.">
+    <title>Proyectos | Ariel Gutierrez</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/png" href="../assets/Logo.png">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <style>
+        /* Projects Page Specific Styles */
+        .projects-page {
+            padding-top: 8rem;
+        }
+        
+        .page-hero {
+            text-align: center;
+            padding: 4rem 0;
+            position: relative;
+        }
+        
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, var(--primary-glow), transparent 70%);
+            opacity: 0.2;
+            z-index: -1;
+        }
+        
+        .page-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1rem;
+        }
+        
+        .page-description {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .github-repos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .repo-card {
+            padding: 1.5rem;
+            background: var(--bg-glass);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            transition: all var(--transition-normal);
+        }
+        
+        .repo-card:hover {
+            border-color: var(--border-glow);
+            transform: translateY(-5px);
+        }
+        
+        .repo-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .repo-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .repo-name {
+            font-size: 1.125rem;
+            font-weight: 600;
+        }
+        
+        .repo-description {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .repo-stats {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+        
+        .repo-stat {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .repo-language {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .language-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .language-dot.php { background: #4F5D95; }
+        .language-dot.javascript { background: #F7DF1E; }
+        .language-dot.python { background: #3776AB; }
+        .language-dot.html { background: #E34F26; }
+        .language-dot.css { background: #1572B6; }
+        .language-dot.java { background: #007396; }
+        .language-dot.vue { background: #42B883; }
+        
+        .projects-showcase {
+            margin-top: 4rem;
+        }
+        
+        .showcase-item {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .showcase-item:nth-child(even) {
+            direction: rtl;
+        }
+        
+        .showcase-item:nth-child(even) > * {
+            direction: ltr;
+        }
+        
+        .showcase-image {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+        
+        .showcase-image img {
+            width: 100%;
+            border-radius: var(--radius-lg);
+            transition: transform var(--transition-slow);
+        }
+        
+        .showcase-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .showcase-content {
+            padding: 2rem 0;
+        }
+        
+        .showcase-number {
+            font-family: var(--font-mono);
+            font-size: 0.875rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .showcase-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .showcase-category {
+            display: inline-block;
+            padding: 0.35rem 1rem;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: var(--radius-full);
+            font-size: 0.75rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .showcase-text {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .showcase-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .showcase-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+        }
+        
+        .showcase-features li::before {
+            content: '▹';
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .showcase-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .showcase-tech span {
+            padding: 0.35rem 0.75rem;
+            background: var(--bg-dark);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            font-size: 0.75rem;
+            color: var(--primary);
+            font-family: var(--font-mono);
+        }
+        
+        .showcase-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        @media (max-width: 968px) {
+            .showcase-item {
+                grid-template-columns: 1fr;
+            }
+            
+            .showcase-item:nth-child(even) {
+                direction: ltr;
+            }
+        }
+        
+        .loading-repos {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-muted);
+        }
+        
+        .loading-repos i {
+            font-size: 2rem;
+            color: var(--primary);
+            animation: spin 1s linear infinite;
+            margin-bottom: 1rem;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+    
+    <!-- Canvas -->
+    <canvas id="bg-canvas"></canvas>
+    
+    <!-- Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Header -->
+    <header class="header scrolled" id="header">
+        <nav class="nav container">
+            <a href="../index.html" class="nav-logo">
+                <span class="logo-text">
+                    <span class="logo-bracket">&lt;</span>
+                    AG
+                    <span class="logo-bracket">/&gt;</span>
+                </span>
+            </a>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="../index.html#home" class="nav-link">
+                            <span class="nav-number">01.</span>Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../index.html#about" class="nav-link">
+                            <span class="nav-number">02.</span>Sobre mí
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../index.html#services" class="nav-link">
+                            <span class="nav-number">03.</span>Servicios
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../index.html#projects" class="nav-link active">
+                            <span class="nav-number">04.</span>Proyectos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../index.html#contact" class="nav-link">
+                            <span class="nav-number">05.</span>Contacto
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="nav-close" id="nav-close">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            
+            <div class="nav-actions">
+                <a href="../assets/Ariel Gutierrez CV.pdf" download class="btn btn-primary btn-glow">
+                    <i class="fas fa-download"></i>
+                    <span>CV</span>
+                </a>
+                
+                <div class="nav-toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main projects-page">
+        <div class="container">
+            <!-- Page Hero -->
+            <section class="page-hero" data-aos="fade-up">
+                <span class="section-subtitle">Portafolio Completo</span>
+                <h1 class="page-title">Mis <span class="gradient-text">Proyectos</span></h1>
+                <p class="page-description">
+                    Una colección de proyectos que demuestran mi experiencia en desarrollo web, 
+                    sistemas empresariales, análisis de datos e inteligencia artificial.
+                </p>
+            </section>
+            
+            <!-- GitHub Repositories -->
+            <section class="github-section" data-aos="fade-up">
+                <h2 class="section-title" style="font-size: 1.75rem; margin-bottom: 1rem;">
+                    <i class="fab fa-github" style="color: var(--primary);"></i>
+                    Repositorios de GitHub
+                </h2>
+                <p class="section-description" style="margin-bottom: 2rem; text-align: left;">
+                    Explora mi código y contribuciones en GitHub.
+                </p>
+                
+                <div class="github-repos" id="github-repos">
+                    <div class="loading-repos">
+                        <i class="fas fa-spinner"></i>
+                        <p>Cargando repositorios...</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Projects Showcase -->
+            <section class="projects-showcase">
+                <h2 class="section-title" style="font-size: 1.75rem; margin-bottom: 3rem; text-align: center;">
+                    Proyectos <span class="gradient-text">Destacados</span>
+                </h2>
+                
+                <!-- Project 1 -->
+                <article class="showcase-item" data-aos="fade-up">
+                    <div class="showcase-image">
+                        <img src="../assets/proyecto-1.png" alt="Sistema de Facturación" loading="lazy">
+                    </div>
+                    <div class="showcase-content">
+                        <span class="showcase-number">01</span>
+                        <span class="showcase-category">Sistema Empresarial</span>
+                        <h3 class="showcase-title">Sistema de Facturación Integral</h3>
+                        <p class="showcase-text">
+                            Sistema desarrollado para Polimil Escuela de Capacitación Integral. 
+                            Automatiza completamente la gestión financiera de la empresa, desde 
+                            el registro de ingresos hasta la generación de reportes.
+                        </p>
+                        <ul class="showcase-features">
+                            <li>Generación automática de facturas en PDF</li>
+                            <li>Control de inventario en tiempo real</li>
+                            <li>Dashboard con métricas financieras</li>
+                            <li>Sistema de roles y permisos</li>
+                            <li>Exportación a Excel y reportes</li>
+                        </ul>
+                        <div class="showcase-tech">
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>JavaScript</span>
+                            <span>TCPDF</span>
+                            <span>Bootstrap</span>
+                        </div>
+                        <div class="showcase-links">
+                            <a href="https://github.com/Ariel-Mauricio" target="_blank" class="btn btn-outline">
+                                <i class="fab fa-github"></i>
+                                <span>Código</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Project 2 -->
+                <article class="showcase-item" data-aos="fade-up">
+                    <div class="showcase-image">
+                        <img src="../assets/proyecto-2.png" alt="Dashboard Epidemiológico" loading="lazy">
+                    </div>
+                    <div class="showcase-content">
+                        <span class="showcase-number">02</span>
+                        <span class="showcase-category">Data Analytics</span>
+                        <h3 class="showcase-title">Dashboard Epidemiológico Latinoamérica</h3>
+                        <p class="showcase-text">
+                            Dashboard interactivo que analiza y visualiza datos de salud pública 
+                            en Latinoamérica. Permite a los usuarios explorar tendencias epidemiológicas 
+                            y tomar decisiones basadas en datos.
+                        </p>
+                        <ul class="showcase-features">
+                            <li>Conexión en tiempo real con BigQuery</li>
+                            <li>Visualizaciones interactivas y dinámicas</li>
+                            <li>Segmentación por país y región</li>
+                            <li>Análisis de medicamentos más consumidos</li>
+                            <li>Exportación automática de reportes</li>
+                        </ul>
+                        <div class="showcase-tech">
+                            <span>PowerBI</span>
+                            <span>BigQuery</span>
+                            <span>SQL</span>
+                            <span>Python</span>
+                            <span>DAX</span>
+                        </div>
+                        <div class="showcase-links">
+                            <a href="https://github.com/Ariel-Mauricio" target="_blank" class="btn btn-outline">
+                                <i class="fab fa-github"></i>
+                                <span>Código</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Project 3 -->
+                <article class="showcase-item" data-aos="fade-up">
+                    <div class="showcase-image">
+                        <img src="../assets/proyecto-3.png" alt="Portal Turístico con IA" loading="lazy">
+                    </div>
+                    <div class="showcase-content">
+                        <span class="showcase-number">03</span>
+                        <span class="showcase-category">Web + IA</span>
+                        <h3 class="showcase-title">Portal Turístico Ecuador con IA</h3>
+                        <p class="showcase-text">
+                            Plataforma turística innovadora que integra inteligencia artificial 
+                            para proporcionar recomendaciones personalizadas y asistencia 
+                            mediante un chatbot inteligente.
+                        </p>
+                        <ul class="showcase-features">
+                            <li>Chatbot IA para consultas turísticas</li>
+                            <li>Mapas interactivos con Google Maps API</li>
+                            <li>Sistema de recomendaciones personalizadas</li>
+                            <li>Panel de administración para empresas</li>
+                            <li>Sistema de reservas integrado</li>
+                        </ul>
+                        <div class="showcase-tech">
+                            <span>Laravel</span>
+                            <span>Vue.js</span>
+                            <span>OpenAI API</span>
+                            <span>MySQL</span>
+                            <span>Google Maps</span>
+                        </div>
+                        <div class="showcase-links">
+                            <a href="https://github.com/Ariel-Mauricio" target="_blank" class="btn btn-outline">
+                                <i class="fab fa-github"></i>
+                                <span>Código</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Project 4 -->
+                <article class="showcase-item" data-aos="fade-up">
+                    <div class="showcase-image">
+                        <img src="../assets/proyecto-4.png" alt="Sistema Hospitalario" loading="lazy">
+                    </div>
+                    <div class="showcase-content">
+                        <span class="showcase-number">04</span>
+                        <span class="showcase-category">Healthcare</span>
+                        <h3 class="showcase-title">Sistema de Gestión Hospitalaria</h3>
+                        <p class="showcase-text">
+                            Plataforma integral para clínicas y consultorios que moderniza 
+                            la gestión de pacientes, citas y comunicación médica, incluyendo 
+                            telemedicina.
+                        </p>
+                        <ul class="showcase-features">
+                            <li>Gestión completa de citas médicas</li>
+                            <li>Historial clínico electrónico seguro</li>
+                            <li>Recetas digitales con firma</li>
+                            <li>Módulo de telemedicina con WebRTC</li>
+                            <li>Asistente IA para consultas básicas</li>
+                        </ul>
+                        <div class="showcase-tech">
+                            <span>Java</span>
+                            <span>Spring Boot</span>
+                            <span>PostgreSQL</span>
+                            <span>React</span>
+                            <span>WebRTC</span>
+                        </div>
+                        <div class="showcase-links">
+                            <a href="https://github.com/Ariel-Mauricio" target="_blank" class="btn btn-outline">
+                                <i class="fab fa-github"></i>
+                                <span>Código</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Project 5 -->
+                <article class="showcase-item" data-aos="fade-up">
+                    <div class="showcase-image">
+                        <img src="../assets/proyecto-5.png" alt="Sistema de Laboratorio" loading="lazy">
+                    </div>
+                    <div class="showcase-content">
+                        <span class="showcase-number">05</span>
+                        <span class="showcase-category">Educación</span>
+                        <h3 class="showcase-title">Sistema de Gestión de Laboratorios</h3>
+                        <p class="showcase-text">
+                            Solución para instituciones educativas que permite gestionar 
+                            laboratorios académicos, incluyendo equipos, estudiantes, 
+                            experimentos y generación de informes.
+                        </p>
+                        <ul class="showcase-features">
+                            <li>Gestión de estudiantes y profesores</li>
+                            <li>Inventario de equipos de laboratorio</li>
+                            <li>Registro detallado de experimentos</li>
+                            <li>Generación automática de informes PDF</li>
+                            <li>Calendario de prácticas y reservas</li>
+                        </ul>
+                        <div class="showcase-tech">
+                            <span>PHP</span>
+                            <span>Laravel</span>
+                            <span>MySQL</span>
+                            <span>Chart.js</span>
+                            <span>Bootstrap</span>
+                        </div>
+                        <div class="showcase-links">
+                            <a href="https://github.com/Ariel-Mauricio" target="_blank" class="btn btn-outline">
+                                <i class="fab fa-github"></i>
+                                <span>Código</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Project 6 -->
+                <article class="showcase-item" data-aos="fade-up">
+                    <div class="showcase-image">
+                        <img src="../assets/proyecto-6.png" alt="Sistema de Cursos" loading="lazy">
+                    </div>
+                    <div class="showcase-content">
+                        <span class="showcase-number">06</span>
+                        <span class="showcase-category">LMS</span>
+                        <h3 class="showcase-title">Plataforma de Gestión de Cursos</h3>
+                        <p class="showcase-text">
+                            Sistema LMS completo con arquitectura de microservicios, 
+                            utilizando APIs sincronizadas en PHP y Java para máxima 
+                            escalabilidad y rendimiento.
+                        </p>
+                        <ul class="showcase-features">
+                            <li>Gestión multi-rol de usuarios</li>
+                            <li>Sistema de calificaciones automatizado</li>
+                            <li>APIs sincronizadas PHP-Java</li>
+                            <li>Reportes de rendimiento académico</li>
+                            <li>Notificaciones en tiempo real</li>
+                        </ul>
+                        <div class="showcase-tech">
+                            <span>PHP</span>
+                            <span>Java API</span>
+                            <span>Vue.js</span>
+                            <span>MySQL</span>
+                            <span>REST API</span>
+                        </div>
+                        <div class="showcase-links">
+                            <a href="https://github.com/Ariel-Mauricio" target="_blank" class="btn btn-outline">
+                                <i class="fab fa-github"></i>
+                                <span>Código</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            
+            <!-- CTA -->
+            <section class="cta section" style="text-align: center; margin-top: 4rem;">
+                <h2 class="cta-title">¿Interesado en trabajar juntos?</h2>
+                <p class="cta-description">Siempre estoy abierto a nuevos proyectos y oportunidades.</p>
+                <div class="cta-buttons" style="justify-content: center;">
+                    <a href="mailto:ariel241103@hotmail.com" class="btn btn-primary btn-lg btn-glow">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contactar</span>
+                    </a>
+                    <a href="https://github.com/Ariel-Mauricio" target="_blank" class="btn btn-outline btn-lg">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+                <p>&copy; 2025 Ariel Gutierrez. Todos los derechos reservados.</p>
+                <p>
+                    <a href="../index.html" style="color: var(--primary);">Volver al inicio</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button class="back-to-top show" id="backToTop" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/three-bg.js"></script>
+    <script src="../js/animations.js"></script>
+    
+    <script>
+        // Fetch GitHub repositories
+        async function fetchGitHubRepos() {
+            const reposContainer = document.getElementById('github-repos');
+            const username = 'Ariel-Mauricio';
+            
+            try {
+                const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=6`);
+                
+                if (!response.ok) {
+                    throw new Error('Failed to fetch repos');
+                }
+                
+                const repos = await response.json();
+                
+                if (repos.length === 0) {
+                    reposContainer.innerHTML = `
+                        <div class="repo-card" style="text-align: center; grid-column: 1/-1;">
+                            <p>No se encontraron repositorios públicos.</p>
+                            <a href="https://github.com/${username}" target="_blank" class="btn btn-primary" style="margin-top: 1rem;">
+                                Visitar GitHub
+                            </a>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                reposContainer.innerHTML = repos.map(repo => `
+                    <a href="${repo.html_url}" target="_blank" class="repo-card">
+                        <div class="repo-header">
+                            <i class="fas fa-book repo-icon"></i>
+                            <span class="repo-name">${repo.name}</span>
+                        </div>
+                        <p class="repo-description">${repo.description || 'Sin descripción'}</p>
+                        <div class="repo-stats">
+                            ${repo.language ? `
+                                <span class="repo-language">
+                                    <span class="language-dot ${repo.language.toLowerCase()}"></span>
+                                    ${repo.language}
+                                </span>
+                            ` : ''}
+                            <span class="repo-stat">
+                                <i class="fas fa-star"></i>
+                                ${repo.stargazers_count}
+                            </span>
+                            <span class="repo-stat">
+                                <i class="fas fa-code-branch"></i>
+                                ${repo.forks_count}
+                            </span>
+                        </div>
+                    </a>
+                `).join('');
+                
+            } catch (error) {
+                console.error('Error fetching repos:', error);
+                reposContainer.innerHTML = `
+                    <div class="repo-card" style="text-align: center; grid-column: 1/-1;">
+                        <i class="fab fa-github" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                        <h3 style="margin-bottom: 0.5rem;">Explora mi GitHub</h3>
+                        <p style="margin-bottom: 1rem; color: var(--text-secondary);">
+                            Visita mi perfil para ver todos mis proyectos y contribuciones.
+                        </p>
+                        <a href="https://github.com/Ariel-Mauricio" target="_blank" class="btn btn-primary">
+                            <i class="fab fa-github"></i>
+                            Ver GitHub
+                        </a>
+                    </div>
+                `;
+            }
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchGitHubRepos();
+        });
+    </script>
+</body>
+</html>

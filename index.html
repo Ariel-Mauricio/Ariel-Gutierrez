@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ariel Gutierrez - Desarrollador Full Stack | Especialista en desarrollo web, bases de datos, IA y soluciones empresariales. Transformo ideas en experiencias digitales.">
+    <meta name="keywords" content="Desarrollador Web, Full Stack, Python, JavaScript, React, Node.js, PHP, Laravel, MySQL, PostgreSQL, IA, Machine Learning">
+    <meta name="author" content="Ariel Gutierrez">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ariel Gutierrez | Desarrollador Full Stack">
+    <meta property="og:description" content="Transformo ideas en experiencias digitales. Especialista en desarrollo web y soluciones empresariales.">
+    <meta property="og:image" content="assets/real.jpg">
+    
+    <title>Ariel Gutierrez | Desarrollador Full Stack</title>
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/Logo.png">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/github-projects.css">
+    
+    <!-- Preconnect to GitHub API -->
+    <link rel="preconnect" href="https://api.github.com">
+</head>
+<body>
+    <!-- Cursor personalizado -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+    
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">AG</div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+            <p class="loader-text">Cargando experiencia...</p>
+        </div>
+    </div>
+
+    <!-- Canvas para Three.js -->
+    <canvas id="bg-canvas"></canvas>
+    
+    <!-- Partículas flotantes -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Header / Navigation -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-text">
+                    <span class="logo-bracket">&lt;</span>
+                    AG
+                    <span class="logo-bracket">/&gt;</span>
+                </span>
+            </a>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link active">
+                            <span class="nav-number">01.</span>Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">
+                            <span class="nav-number">02.</span>Sobre mí
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#services" class="nav-link">
+                            <span class="nav-number">03.</span>Servicios
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#projects" class="nav-link">
+                            <span class="nav-number">04.</span>Proyectos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">
+                            <span class="nav-number">05.</span>Contacto
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="nav-close" id="nav-close">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            
+            <div class="nav-actions">
+                <a href="assets/Ariel Gutierrez CV.pdf" download class="btn btn-primary btn-glow">
+                    <i class="fas fa-download"></i>
+                    <span>CV</span>
+                </a>
+                
+                <div class="nav-toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!-- HERO SECTION -->
+        <section class="hero section" id="home">
+            <div class="hero-container container">
+                <div class="hero-content">
+                    <div class="hero-badge" data-aos="fade-right">
+                        <span class="badge-dot"></span>
+                        <span>Disponible para trabajar</span>
+                    </div>
+                    
+                    <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
+                        <span class="title-hello">Hola, soy</span>
+                        <span class="title-name glitch" data-text="Ariel Gutierrez">Ariel Gutierrez</span>
+                        <span class="title-role">
+                            <span class="typing-text" id="typing-text"></span>
+                            <span class="typing-cursor">|</span>
+                        </span>
+                    </h1>
+                    
+                    <p class="hero-description" data-aos="fade-up" data-aos-delay="200">
+                        Desarrollo soluciones digitales que <span class="highlight">transforman ideas</span> en 
+                        experiencias excepcionales. Especializado en <span class="highlight">desarrollo web</span>, 
+                        <span class="highlight">bases de datos</span> e <span class="highlight">inteligencia artificial</span>.
+                    </p>
+                    
+                    <div class="hero-stats" data-aos="fade-up" data-aos-delay="300">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="15">0</span>
+                            <span class="stat-label">Proyectos</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="3">0</span>
+                            <span class="stat-label">Años Exp.</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="35">0</span>
+                            <span class="stat-label">Tecnologías</span>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
+                        <a href="#projects" class="btn btn-primary btn-lg btn-glow">
+                            <span>Ver Proyectos</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-outline btn-lg">
+                            <span>Contactar</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="hero-social" data-aos="fade-up" data-aos-delay="500">
+                        <a href="https://github.com/Ariel-Mauricio" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://wa.me/593963159915" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:ariel241103@hotmail.com" class="social-link" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-image" data-aos="fade-left" data-aos-delay="200">
+                    <div class="image-wrapper">
+                        <div class="image-border"></div>
+                        <div class="image-glow"></div>
+                        <img src="assets/real.jpeg" alt="Ariel Gutierrez - Desarrollador Full Stack" class="profile-img">
+                        <div class="image-badge">
+                            <i class="fas fa-code"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating elements -->
+                    <div class="floating-card card-1">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <div class="floating-card card-2">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="floating-card card-3">
+                        <i class="fab fa-node-js"></i>
+                    </div>
+                    <div class="floating-card card-4">
+                        <i class="fas fa-database"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <span>Scroll</span>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section class="about section" id="about">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">Conóceme</span>
+                    <h2 class="section-title">Sobre <span class="gradient-text">Mí</span></h2>
+                    <div class="section-line"></div>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="about-content" data-aos="fade-right">
+                        <div class="about-text">
+                            <p class="lead">
+                                Soy un <span class="highlight">desarrollador apasionado</span> con experiencia en crear 
+                                soluciones digitales que generan impacto real en los negocios.
+                            </p>
+                            <p>
+                                Mi enfoque combina <strong>código limpio</strong>, <strong>diseño centrado en el usuario</strong> 
+                                y <strong>tecnologías modernas</strong> para entregar productos que superan expectativas.
+                            </p>
+                            <p>
+                                Actualmente trabajo como <strong>Jefe de Sistemas</strong> en Polimil, donde lidero proyectos 
+                                de automatización y gestión de datos que optimizan procesos empresariales.
+                            </p>
+                        </div>
+                        
+                        <div class="about-info">
+                            <div class="info-item">
+                                <i class="fas fa-user"></i>
+                                <div>
+                                    <span class="info-label">Nombre</span>
+                                    <span class="info-value">Ariel Mauricio Gutierrez</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <span class="info-label">Email</span>
+                                    <span class="info-value">ariel241103@hotmail.com</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <span class="info-label">Ubicación</span>
+                                    <span class="info-value">Ecuador</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-briefcase"></i>
+                                <div>
+                                    <span class="info-label">Disponibilidad</span>
+                                    <span class="info-value status-available">Disponible</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-skills" data-aos="fade-left">
+                        <p></p>
+                        <h3 class="skills-title">.......Tech Stack</h3>
+                        
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h4 class="category-title"><i class="fas fa-code"></i> Languages</h4>
+                                <div class="badge-skills">
+                                    <span class="badge-skill javascript"><i class="devicon-javascript-plain"></i> JavaScript</span>
+                                    <span class="badge-skill typescript"><i class="devicon-typescript-plain"></i> TypeScript</span>
+                                    <span class="badge-skill python"><i class="devicon-python-plain"></i> Python</span>
+                                    <span class="badge-skill java"><i class="devicon-java-plain"></i> Java</span>
+                                    <span class="badge-skill php"><i class="devicon-php-plain"></i> PHP</span>
+                                    <span class="badge-skill nodejs"><i class="devicon-nodejs-plain"></i> Node.js</span>
+                                    <span class="badge-skill html5"><i class="devicon-html5-plain"></i> HTML5</span>
+                                    <span class="badge-skill css3"><i class="devicon-css3-plain"></i> CSS3</span>
+                                </div>
+                                <div class="skill-tags"><!-- Oculto por CSS --></div>
+                            </div>
+                            <div class="skill-category">
+                                <h4 class="category-title"><i class="fas fa-layer-group"></i> Frameworks</h4>
+                                <div class="badge-skills">
+                                    <span class="badge-skill react"><i class="devicon-react-original"></i> React</span>
+                                    <span class="badge-skill vuejs"><i class="devicon-vuejs-plain"></i> Vue.js</span>
+                                    <span class="badge-skill angular"><i class="devicon-angularjs-plain"></i> Angular</span>
+                                    <span class="badge-skill nodejs"><i class="devicon-nodejs-plain"></i> Node.js</span>
+                                    <span class="badge-skill express"><i class="devicon-express-original"></i> Express.js</span>
+                                    <span class="badge-skill laravel"><i class="devicon-laravel-plain"></i> Laravel</span>
+                                    <span class="badge-skill django"><i class="devicon-django-plain"></i> Django</span>
+                                    <span class="badge-skill bootstrap"><i class="devicon-bootstrap-plain"></i> Bootstrap</span>
+                                </div>
+                                <div class="skill-tags"><!-- Oculto por CSS --></div>
+                            </div>
+                            <div class="skill-category">
+                                <h4 class="category-title"><i class="fas fa-database"></i> Databases</h4>
+                                <div class="badge-skills">
+                                    <span class="badge-skill mysql"><i class="devicon-mysql-plain"></i> MySQL</span>
+                                    <span class="badge-skill postgresql"><i class="devicon-postgresql-plain"></i> PostgreSQL</span>
+                                    <span class="badge-skill mongodb"><i class="devicon-mongodb-plain"></i> MongoDB</span>
+                                    <span class="badge-skill sqlserver"><i class="devicon-microsoftsqlserver-plain"></i> SQL Server</span>
+                                    <span class="badge-skill bigquery"><i class="devicon-googlecloud-plain"></i> BigQuery</span>
+                                    <span class="badge-skill firebase"><i class="devicon-firebase-plain"></i> Firebase</span>
+                                    <span class="badge-skill redis"><i class="devicon-redis-plain"></i> Redis</span>
+                                </div>
+                                <div class="skill-tags"><!-- Oculto por CSS --></div>
+                            </div>
+                            <div class="skill-category">
+                                <h4 class="category-title"><i class="fas fa-brain"></i> Machine Learning & Data</h4>
+                                <div class="badge-skills">
+                                    <span class="badge-skill ml"><i class="devicon-pandas-original"></i> Pandas</span>
+                                    <span class="badge-skill numpy"><i class="devicon-numpy-original"></i> NumPy</span>
+                                    <span class="badge-skill scikit"><i class="devicon-scikitlearn-plain"></i> Scikit-learn</span>
+                                    <span class="badge-skill tensor"><i class="devicon-tensorflow-original"></i> TensorFlow</span>
+                                    <span class="badge-skill powerbi"><i class="fas fa-chart-bar"></i> PowerBI</span>
+                                    <span class="badge-skill matplotlib"><i class="devicon-matplotlib-plain"></i> Matplotlib</span>
+                                    <span class="badge-skill dataviz"><i class="fas fa-chart-line"></i> Data Viz</span>
+                                </div>
+                                <div class="skill-tags"><!-- Oculto por CSS --></div>
+                            </div>
+                            <div class="skill-category">
+                                <h4 class="category-title"><i class="fas fa-laptop-code"></i> IDEs</h4>
+                                <div class="badge-skills">
+                                    <span class="badge-skill vscode"><i class="devicon-vscode-plain"></i> VS Code</span>
+                                    <span class="badge-skill pycharm"><i class="devicon-pycharm-plain"></i> PyCharm</span>
+                                    <span class="badge-skill intellij"><i class="devicon-intellij-plain"></i> IntelliJ</span>
+                                    <span class="badge-skill jupyter"><i class="devicon-jupyter-plain"></i> Jupyter</span>
+                                    <span class="badge-skill sublime"><i class="fas fa-file-code"></i> Sublime</span>
+                                    <span class="badge-skill cursor"><i class="fas fa-i-cursor"></i> Cursor</span>
+                                </div>
+                                <div class="skill-tags"><!-- Oculto por CSS --></div>
+                            </div>
+                            <div class="skill-category">
+                                <h4 class="category-title"><i class="fas fa-tools"></i> Tools & Technologies</h4>
+                                <div class="badge-skills">
+                                    <span class="badge-skill git"><i class="devicon-git-plain"></i> Git/GitHub</span>
+                                    <span class="badge-skill docker"><i class="devicon-docker-plain"></i> Docker</span>
+                                    <span class="badge-skill postman"><i class="devicon-postman-plain"></i> Postman</span>
+                                    <span class="badge-skill linux"><i class="devicon-linux-plain"></i> Linux</span>
+                                    <span class="badge-skill aws"><i class="devicon-amazonwebservices-original"></i> AWS</span>
+                                    <span class="badge-skill gcloud"><i class="devicon-googlecloud-plain"></i> GCloud</span>
+                                    <span class="badge-skill rest"><i class="fas fa-plug"></i> REST APIs</span>
+                                    <span class="badge-skill cicd"><i class="fas fa-sync-alt"></i> CI/CD</span>
+                                    <span class="badge-skill micro"><i class="fas fa-cubes"></i> Microservices</span>
+                                </div>
+                                <div class="skill-tags"><!-- Oculto por CSS --></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Experience & Education Cards -->
+                <div class="experience-section" data-aos="fade-up">
+                    <h3 class="experience-title">Experiencia & Educación</h3>
+                    
+                    <!-- Experience Timeline -->
+                    <div class="timeline-section" data-aos="fade-up">
+                        <h3 class="timeline-title">Experiencia & Educación</h3>
+                        <div class="timeline">
+                            <div class="timeline-item" data-aos="fade-right">
+                                <div class="timeline-marker">
+                                    <i class="fas fa-briefcase"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">2025 - Presente</span>
+                                    <h4>Jefe de Sistemas</h4>
+                                    <p class="timeline-company">Polimil Escuela de Capacitación Integral</p>
+                                    <p>Liderazgo en automatización de procesos, gestión de bases de datos y desarrollo de sistemas empresariales.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-aos="fade-left">
+                                <div class="timeline-marker">
+                                    <i class="fas fa-laptop-code"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">2023 - Presente</span>
+                                    <h4>Desarrollador Web Freelance</h4>
+                                    <p class="timeline-company">Independiente</p>
+                                    <p>Desarrollo de aplicaciones web personalizadas, sistemas de gestión y soluciones con IA para diversos clientes.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-aos="fade-right">
+                                <div class="timeline-marker">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">2020 - 2024</span>
+                                    <h4>Tecnología en Sistemas y Gestión de Data</h4>
+                                    <p class="timeline-company">Instituto Tecnológico Universitario Rumiñahui</p>
+                                    <p>Formación integral en desarrollo de software, bases de datos, redes y tecnologías emergentes.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-aos="fade-left">
+                                <div class="timeline-marker">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">2024</span>
+                                    <h4>Certificaciones Cisco</h4>
+                                    <p class="timeline-company">Cisco Networking Academy</p>
+                                    <p>Python Essentials & Cybersecurity Fundamentals.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section class="services section" id="services">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">Lo que hago</span>
+                    <h2 class="section-title">Mis <span class="gradient-text">Servicios</span></h2>
+                    <div class="section-line"></div>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card glass" data-aos="fade-up" data-aos-delay="100">
+                        <div class="service-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3 class="service-title">Desarrollo Web</h3>
+                        <p class="service-description">
+                            Sitios web modernos, responsivos y optimizados. Desde landing pages hasta aplicaciones web complejas.
+                        </p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Diseño responsive</li>
+                            <li><i class="fas fa-check"></i> SEO optimizado</li>
+                            <li><i class="fas fa-check"></i> Alto rendimiento</li>
+                        </ul>
+                        <div class="service-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Vue</span>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card glass" data-aos="fade-up" data-aos-delay="200">
+                        <div class="service-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3 class="service-title">Backend & APIs</h3>
+                        <p class="service-description">
+                            Desarrollo de APIs robustas y sistemas backend escalables para todo tipo de aplicaciones.
+                        </p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> APIs RESTful</li>
+                            <li><i class="fas fa-check"></i> Autenticación segura</li>
+                            <li><i class="fas fa-check"></i> Arquitectura escalable</li>
+                        </ul>
+                        <div class="service-tech">
+                            <span>PHP</span>
+                            <span>Laravel</span>
+                            <span>Node.js</span>
+                            <span>Java</span>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card glass" data-aos="fade-up" data-aos-delay="300">
+                        <div class="service-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3 class="service-title">Bases de Datos</h3>
+                        <p class="service-description">
+                            Diseño, optimización y gestión de bases de datos para máximo rendimiento y seguridad.
+                        </p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Modelado de datos</li>
+                            <li><i class="fas fa-check"></i> Optimización de queries</li>
+                            <li><i class="fas fa-check"></i> Migración de datos</li>
+                        </ul>
+                        <div class="service-tech">
+                            <span>MySQL</span>
+                            <span>PostgreSQL</span>
+                            <span>MongoDB</span>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card glass" data-aos="fade-up" data-aos-delay="400">
+                        <div class="service-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="service-title">IA & Analytics</h3>
+                        <p class="service-description">
+                            Soluciones con inteligencia artificial, chatbots y dashboards analíticos para toma de decisiones.
+                        </p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Chatbots inteligentes</li>
+                            <li><i class="fas fa-check"></i> Análisis predictivo</li>
+                            <li><i class="fas fa-check"></i> Visualización de datos</li>
+                        </ul>
+                        <div class="service-tech">
+                            <span>Python</span>
+                            <span>PowerBI</span>
+                            <span>BigQuery</span>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card glass" data-aos="fade-up" data-aos-delay="500">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="service-title">Sistemas Empresariales</h3>
+                        <p class="service-description">
+                            Desarrollo de sistemas a medida: facturación, inventarios, CRM, ERP y más.
+                        </p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Automatización</li>
+                            <li><i class="fas fa-check"></i> Reportes automáticos</li>
+                            <li><i class="fas fa-check"></i> Integración total</li>
+                        </ul>
+                        <div class="service-tech">
+                            <span>Laravel</span>
+                            <span>Vue.js</span>
+                            <span>MySQL</span>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card glass" data-aos="fade-up" data-aos-delay="600">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 class="service-title">Soporte Técnico</h3>
+                        <p class="service-description">
+                            Mantenimiento de sistemas, soporte técnico y consultoría en tecnología.
+                        </p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Mantenimiento PC</li>
+                            <li><i class="fas fa-check"></i> Redes & Seguridad</li>
+                            <li><i class="fas fa-check"></i> Consultoría IT</li>
+                        </ul>
+                        <div class="service-tech">
+                            <span>Hardware</span>
+                            <span>Redes</span>
+                            <span>Seguridad</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION - CARGA AUTOMÁTICA DESDE GITHUB -->
+        <section class="projects section" id="projects">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">Mi trabajo</span>
+                    <h2 class="section-title">Proyectos <span class="gradient-text">Destacados</span></h2>
+                    <div class="section-line"></div>
+                    <div class="section-header-extra">
+                        <p class="section-description">
+                            Proyectos cargados automáticamente desde mi perfil de GitHub. 
+                            Cada repositorio representa código real y soluciones funcionales.
+                        </p>
+                        <div class="github-live-badge">
+                            <span class="pulse-dot"></span>
+                            <span>Sincronizado con GitHub</span>
+                        </div>
+                        <button class="refresh-btn" onclick="refreshGitHubProjects()" title="Actualizar proyectos">
+                            <i class="fas fa-sync-alt"></i>
+                            <span>Actualizar</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Projects Filter -->
+                <div class="projects-filter" data-aos="fade-up">
+                    <button class="filter-btn active" data-filter="all">
+                        <i class="fas fa-th-large"></i>
+                        Todos
+                    </button>
+                    <button class="filter-btn" data-filter="web">
+                        <i class="fas fa-globe"></i>
+                        Web
+                    </button>
+                    <button class="filter-btn" data-filter="sistema">
+                        <i class="fas fa-cogs"></i>
+                        Sistemas
+                    </button>
+                    <button class="filter-btn" data-filter="data">
+                        <i class="fas fa-chart-bar"></i>
+                        Data/IA
+                    </button>
+                    <button class="filter-btn" data-filter="api">
+                        <i class="fas fa-server"></i>
+                        APIs
+                    </button>
+                </div>
+                
+                <!-- GitHub Projects Container -->
+                <div class="github-projects-container">
+                    <!-- Loader -->
+                    <div id="github-loader">
+                        <div class="github-loader-spinner"></div>
+                        <p>Cargando proyectos desde GitHub...</p>
+                    </div>
+                    
+                    <!-- Error Message -->
+                    <div id="github-error"></div>
+                    
+                    <!-- Projects Grid - Se llena dinámicamente -->
+                    <div class="projects-grid" id="github-projects-grid"></div>
+                </div>
+                
+                <!-- GitHub Profile Card -->
+                <div class="github-section" data-aos="fade-up">
+                    <div class="github-card glass">
+                        <div class="github-header">
+                            <i class="fab fa-github"></i>
+                            <h3>@Ariel-Mauricio</h3>
+                        </div>
+                        <p>Estos proyectos se actualizan automáticamente cuando subo nuevo código. ¡Sígueme para ver mis últimas creaciones!</p>
+                        <div class="github-card-actions">
+                            <a href="https://github.com/Ariel-Mauricio" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-glow">
+                                <i class="fab fa-github"></i>
+                                <span>Ver perfil completo</span>
+                            </a>
+                            <a href="https://github.com/Ariel-Mauricio?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                                <span>Todos los repos</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA SECTION -->
+        <section class="cta section">
+            <div class="cta-bg">
+                <div class="cta-shape shape-1"></div>
+                <div class="cta-shape shape-2"></div>
+            </div>
+            <div class="container">
+                <div class="cta-content" data-aos="zoom-in">
+                    <span class="cta-badge">¿Tienes un proyecto en mente?</span>
+                    <h2 class="cta-title">
+                        Hagamos algo <span class="gradient-text">increíble</span> juntos
+                    </h2>
+                    <p class="cta-description">
+                        Estoy disponible para proyectos freelance, colaboraciones y oportunidades de trabajo.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="mailto:ariel241103@hotmail.com" class="btn btn-primary btn-lg btn-glow">
+                            <i class="fas fa-envelope"></i>
+                            <span>Escríbeme</span>
+                        </a>
+                        <a href="https://wa.me/593963159915" target="_blank" class="btn btn-outline btn-lg">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="contact section" id="contact">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">Hablemos</span>
+                    <h2 class="section-title">Ponte en <span class="gradient-text">Contacto</span></h2>
+                    <div class="section-line"></div>
+                </div>
+                
+                <div class="contact-grid">
+                    <div class="contact-info" data-aos="fade-right">
+                        <h3 class="contact-title">Conectemos</h3>
+                        <p class="contact-text">
+                            ¿Tienes un proyecto, una idea o simplemente quieres saludar? 
+                            No dudes en contactarme. Respondo en menos de 24 horas.
+                        </p>
+                        
+                        <div class="contact-items">
+                            <div class="contact-item glass">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <span class="contact-label">Email</span>
+                                    <a href="mailto:ariel241103@hotmail.com">ariel241103@hotmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item glass">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <span class="contact-label">Teléfono</span>
+                                    <a href="tel:+593984229704">+593 098 422 9704</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item glass">
+                                <div class="contact-icon">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <span class="contact-label">WhatsApp</span>
+                                    <a href="https://wa.me/593963159915" target="_blank">+593 96 315 9915</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item glass">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <span class="contact-label">Ubicación</span>
+                                    <span>Ecuador</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-social">
+                            <h4>Sígueme</h4>
+                            <div class="social-links">
+                                <a href="https://github.com/Ariel-Mauricio" target="_blank" class="social-link" aria-label="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/" target="_blank" class="social-link" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="https://www.instagram.com/websculturs/" target="_blank" class="social-link" aria-label="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-wrapper" data-aos="fade-left">
+                        <form class="contact-form glass" id="contact-form">
+                            <div class="form-group">
+                                <label for="name">Nombre</label>
+                                <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+                                <span class="form-icon"><i class="fas fa-user"></i></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                                <span class="form-icon"><i class="fas fa-envelope"></i></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Asunto</label>
+                                <input type="text" id="subject" name="subject" placeholder="¿De qué quieres hablar?" required>
+                                <span class="form-icon"><i class="fas fa-tag"></i></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Mensaje</label>
+                                <textarea id="message" name="message" rows="5" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
+                                <span class="form-icon"><i class="fas fa-comment"></i></span>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-lg btn-glow btn-full">
+                                <span>Enviar Mensaje</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#home" class="footer-logo">
+                        <span class="logo-bracket">&lt;</span>
+                        AG
+                        <span class="logo-bracket">/&gt;</span>
+                    </a>
+                    <p>Transformando ideas en experiencias digitales excepcionales.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Navegación</h4>
+                    <ul>
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#about">Sobre mí</a></li>
+                        <li><a href="#services">Servicios</a></li>
+                        <li><a href="#projects">Proyectos</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-services">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li>Desarrollo Web</li>
+                        <li>Backend & APIs</li>
+                        <li>Bases de Datos</li>
+                        <li>IA & Analytics</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><a href="mailto:ariel241103@hotmail.com">ariel241103@hotmail.com</a></li>
+                        <li><a href="tel:+593984229704">+593 098 422 9704</a></li>
+                        <li>Ecuador</li>
+                    </ul>
+                    <div class="footer-social">
+                        <a href="https://github.com/Ariel-Mauricio" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://wa.me/593963159915" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ariel Gutierrez. Todos los derechos reservados.</p>
+                <p>Hecho con <i class="fas fa-heart"></i> y mucho <i class="fas fa-coffee"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button class="back-to-top" id="backToTop" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Project Modal -->
+    <div class="modal" id="project-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content glass">
+            <button class="modal-close" aria-label="Cerrar">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-image">
+                <img src="" alt="" id="modal-img">
+            </div>
+            <div class="modal-body">
+                <span class="modal-category" id="modal-category"></span>
+                <h3 class="modal-title" id="modal-title"></h3>
+                <p class="modal-description" id="modal-description"></p>
+                <div class="modal-tech" id="modal-tech"></div>
+                <div class="modal-features">
+                    <h4>Características principales:</h4>
+                    <ul id="modal-features"></ul>
+                </div>
+                <div class="modal-links">
+                    <a href="#" class="btn btn-primary" id="modal-github" target="_blank">
+                        <i class="fab fa-github"></i>
+                        <span>Ver código</span>
+                    </a>
+                    <a href="#" class="btn btn-outline" id="modal-demo" target="_blank">
+                        <i class="fas fa-external-link-alt"></i>
+                        <span>Demo</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/three-bg.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/github-projects.js" defer></script>
+</body>
+</html>
